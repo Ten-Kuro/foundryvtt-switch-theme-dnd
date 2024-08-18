@@ -1,0 +1,50 @@
+{
+  "id": "switchThemeDnD",
+  "title": "Switch Theme DnD",
+  "description": "D&D Unofficial Switch Theme.",
+  "authors": [
+    {
+      "name": "Tenkuro",
+			"github": "Ten-Kuro",
+			"discord": "tenkuro"
+    }
+  ],
+  "version": "1",
+  "compatibility": {
+	  "minimum": "11",
+		"verified": "11"
+	},
+	"scripts": [
+	  "scripts/switchThemeDnD.js"
+	],
+	"languages": [
+		{
+			"lang": "en",
+			"name": "English",
+			"path" : "languages/en.json"
+		},
+		{
+			"lang": "fr",
+			"name": "Français",
+			"path": "languages/fr.json"
+		}
+	],
+	"styles": [
+		"styles/switchThemeDnD.css"
+	],
+	"relationships": {
+    "systems": [
+      {
+        "id": "dnd5e",
+        "type": "system",
+        "compatibility": {}
+      }
+    ]
+  },
+  "bugs": "//github.com/Ten-Kuro/foundryvtt-switch-theme-dnd/issues",
+  "url": "https://github.com/Ten-Kuro/foundryvtt-switch-theme-dnd",
+  "readme": "https://github.com/Ten-Kuro/foundryvtt-switch-theme-dnd/blob/main/README.md",
+  "changelog": "https://github.com/Ten-Kuro/foundryvtt-switch-theme-dnd/blob/main/CHANGELOG.md",
+  "manifest": "https://github.com/Ten-Kuro/switchThemeDnd/blob/main/module.json",
+  "download": "https://github.com/Ten-Kuro/foundryvtt-switch-theme-dnd/archive/refs/heads/main.zip"
+}
