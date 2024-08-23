@@ -19,9 +19,9 @@
   font-family: DragonBall;
 } */
 
-/* Applique un background orange */
+/* Applique un background verte */
 #ui-right, #players, #hotbar, #hotbar-directory-controls, #action-bar, #hotbar-page-controls {
-  background-color: orange;
+  background-color: green;
 }
 
 /* Applique un nouveau logo à la place de l'enclume */

@@ -11,9 +11,8 @@
 	  		},
 			"options" : {
 				"indicator.choices.0": "DBZ",
-				"indicator.choices.1": "Default",
-				"indicator.fonts.0": "DBZ (truetype)",
-				"indicator.fonts.1": "Default"
+				"indicator.choices.1": "GREEN",
+				"indicator.choices.2": "Default"
 			}
 	  	}
 	}

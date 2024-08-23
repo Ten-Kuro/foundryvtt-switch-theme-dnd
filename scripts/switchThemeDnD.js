@@ -9,12 +9,8 @@
 
 const IndicatorMode = {
     DBZ: 0,
-    DEFAULT: 1,
-};
-
-const IndicatorFonts = {
-	DBZ: 0,
-    DEFAULT: 1,
+    GREEN: 1,
+    DEFAULT: 2,
 };
 
 class SwitchTheme {
@@ -62,22 +58,25 @@ class SwitchTheme {
             type: Number,
 			choices: {
 				0: `SWITCH-THEME.settings.${this.SETTINGS.OPTIONS}.indicator.choices.0`,
-				1: `SWITCH-THEME.settings.${this.SETTINGS.OPTIONS}.indicator.choices.1`
+				1: `SWITCH-THEME.settings.${this.SETTINGS.OPTIONS}.indicator.choices.1`,
+                2: `SWITCH-THEME.settings.${this.SETTINGS.OPTIONS}.indicator.choices.2`
 			},
 			onChange: (value) => {
 				let state = Number(value);
 				var head = document.getElementsByTagName('head')[0];
 				var locationOrigin= document.location.origin;
-				var hrefToApply = "css/style.css";
+				var hrefToApply = "styles/style.css";
 				
 				switch(state){
 					case IndicatorMode.DBZ:
 							hrefToApply= "styles/dbzTheme.css";
-                            document.documentElement.style.setProperty('--major-button-font-family','DragonBall');	
-					  break;	    
+					break;
+                    case IndicatorMode.GREEN:
+                            hrefToApply= "styles/green.css";
+                    break;    
 					case IndicatorMode.DEFAULT:
-							hrefToApply= "css/style.css";
-							break;
+							hrefToApply= "styles/style.css";
+					break;
 					default:
 					  console.log('Something went wrong [$value] does not exists in fonts choices (in theme)');
 				}

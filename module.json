@@ -16,7 +16,7 @@
 		"verified": "11"
 	},
 	"scripts": [
-	  	"scripts/switchThemeDnD.js"
+	  	"scripts/switchthemednd.js"
 	],
 	"languages": [
 		{
@@ -31,8 +31,10 @@
 		}
 	],
 	"styles": [
-		"styles/switchThemeDnD.css",
-		"styles/dbzTheme.css"
+		"styles/switchthemednd.css",
+		"styles/style.css",
+		"styles/dbztheme.css",
+		"styles/green.css"
 	],
 
   "bugs": "//github.com/Ten-Kuro/foundryvtt-switch-theme-dnd/issues",
