@@ -1,31 +1,4 @@
-/* Applique un nouveau logo de pause */
-#pause img {
-  content: url("/modules/switchThemeDnD/DBZ/pause-icon.webp");
-}
-
-/* @font-face {
-  font-family: "DragonBall";
-  src: url("../fonts/DBZ/Saiyan-Sans.ttf") format("truetype");
-} */
-
-/* Appliquer la police à tout le document */
-/* body {
-  font-family: DragonBall;
-  font-size: 16px;
-} */
-
-/* Appliquer la police aux titres et autres éléments */
-/*h1, h2, h3, h4, h5, h6, p, span, div {
-  font-family: DragonBall;
-} */
-
 /* Applique un background verte */
 #ui-right, #players, #hotbar, #hotbar-directory-controls, #action-bar, #hotbar-page-controls {
   background-color: green;
-}
-
-/* Applique un nouveau logo à la place de l'enclume */
-#logo {
-  content: url("/modules/switchThemeDnD/DBZ/fvtt.png");
-  height: 70px;
 }

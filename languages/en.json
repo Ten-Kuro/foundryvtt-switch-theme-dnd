@@ -7,7 +7,7 @@
 			},
 			"select-skin": {
 				"Name": "Select your skin:",
-				"Hint": "Switch between the DBZ and the Default skin in the game."
+				"Hint": "Switch between the specifics skin and the Default skin in the game."
 	  		},
 			"options" : {
 				"indicator.choices.0": "DBZ",

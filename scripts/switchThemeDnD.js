@@ -21,7 +21,7 @@ const themes = {
         css: "styles/green.css"
     },
     [IndicatorMode.DEFAULT] : {
-        css: "styles/switchthemednd.css"
+        css: "styles/style.css"
     },
 }
 

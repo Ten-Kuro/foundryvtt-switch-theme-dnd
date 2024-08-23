@@ -7,7 +7,7 @@
 		    },
 			"select-skin": {
 				"Name": "Sélectionner le thème :",
-				"Hint": "Basculer entre le thème DBZ et le thème par Defaut en jeu."
+				"Hint": "Basculer entre les thèmes spécifiques et celui par Defaut en jeu."
 	  		},
 			"options" : {
 				"indicator.choices.0": "DBZ",
