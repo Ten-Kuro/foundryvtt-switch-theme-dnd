@@ -13,6 +13,18 @@ const IndicatorMode = {
     DEFAULT: 2,
 };
 
+const themes = {
+    [IndicatorMode.DBZ] : {
+        css: "styles/dbztheme.css"
+    },
+    [IndicatorMode.GREEN] : {
+        css: "styles/green.css"
+    },
+    [IndicatorMode.DEFAULT] : {
+        css: "styles/switchthemednd.css"
+    },
+}
+
 class SwitchTheme {
     static ID = 'switchThemeDnD';
 
@@ -54,7 +66,7 @@ class SwitchTheme {
             hint: `SWITCH-THEME.settings.${this.SETTINGS.SELECT_SKIN}.Hint`,
             scope: "client",
             config: true,
-            default: 1,
+            default: 2,
             type: Number,
 			choices: {
 				0: `SWITCH-THEME.settings.${this.SETTINGS.OPTIONS}.indicator.choices.0`,
@@ -62,24 +74,26 @@ class SwitchTheme {
                 2: `SWITCH-THEME.settings.${this.SETTINGS.OPTIONS}.indicator.choices.2`
 			},
 			onChange: (value) => {
-				let state = Number(value);
-				var head = document.getElementsByTagName('head')[0];
-				var locationOrigin= document.location.origin;
-				var hrefToApply = "styles/style.css";
+				const state = Number(value);
+				const head = document.head;
+
+				const theme = themes[state] || themes[IndicatorMode.DEFAULT];
+				const hrefToApply = theme.css;
 				
-				switch(state){
-					case IndicatorMode.DBZ:
-							hrefToApply= "styles/dbzTheme.css";
-					break;
-                    case IndicatorMode.GREEN:
-                            hrefToApply= "styles/green.css";
-                    break;    
-					case IndicatorMode.DEFAULT:
-							hrefToApply= "styles/style.css";
-					break;
-					default:
-					  console.log('Something went wrong [$value] does not exists in fonts choices (in theme)');
-				}
+				// Iterate through head children and replace only the theme CSS value part in href
+                Array.from(head.children).some(child => {
+                    if (child.href) {
+                        // Iterate over each theme's CSS value
+                        for (const cssPath of Object.values(themes).map(t => t.css)) {
+                            if (child.href.endsWith(cssPath)) {
+                                // Replace only the matched theme CSS part
+                                child.href = child.href.replace(cssPath, hrefToApply);
+                                return true; // Stop the loop after replacement
+                            }
+                        }
+                    }
+                    return false; // Continue loop if no replacement was made
+                });
 			}
         });
     }
