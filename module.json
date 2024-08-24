@@ -31,9 +31,7 @@
 		}
 	],
 	"styles": [
-		"styles/style.css",
-		"styles/dbztheme.css",
-		"styles/green.css"
+		"styles/style.css"
 	],
 
   "bugs": "//github.com/Ten-Kuro/foundryvtt-switch-theme-dnd/issues",
