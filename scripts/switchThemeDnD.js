@@ -1,6 +1,6 @@
 /**
  * A single ToDo in our list of Todos.
- * @typedef {Object} ToDo
+ * @typedef {Object} SwithTheme
  * @property {string} id - A unique ID to identify this todo.
  * @property {string} label - The text of the todo.
  * @property {boolean} isDone - Marks whether the todo is done.
@@ -21,7 +21,7 @@ const themes = {
         css: "styles/green.css"
     },
     [IndicatorMode.DEFAULT] : {
-        css: "styles/style.css"
+        css: "styles/default.css"
     },
 }
 
@@ -33,7 +33,6 @@ class SwitchTheme {
     };*/
 
     static SETTINGS = {
-        ACTIVATE_THEMES: 'activate-themes',
         SELECT_SKIN: 'select-skin',
         OPTIONS: 'options',
     }

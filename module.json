@@ -31,7 +31,7 @@
 		}
 	],
 	"styles": [
-		"styles/style.css",
+		"styles/default.css",
 		"styles/dbztheme.css",
 		"styles/green.css"
 	],
