@@ -36,8 +36,8 @@
 
   "bugs": "//github.com/Ten-Kuro/foundryvtt-switch-theme-dnd/issues",
   "url": "https://github.com/Ten-Kuro/foundryvtt-switch-theme-dnd",
-  "readme": "https://github.com/Ten-Kuro/foundryvtt-switch-theme-dnd/blob/main/README.md",
-  "changelog": "https://github.com/Ten-Kuro/foundryvtt-switch-theme-dnd/blob/main/CHANGELOG.md",
-  "manifest": "https://github.com/Ten-Kuro/switchThemeDnd/blob/main/module.json",
-  "download": "https://github.com/Ten-Kuro/foundryvtt-switch-theme-dnd/archive/refs/heads/main.zip"
+  "readme": "https://github.com/Ten-Kuro/foundryvtt-switch-theme-dnd/blob/develop/README.md",
+  "changelog": "https://github.com/Ten-Kuro/foundryvtt-switch-theme-dnd/blob/develop/CHANGELOG.md",
+  "manifest": "https://github.com/Ten-Kuro/switchThemeDnd/blob/develop/module.json",
+  "download": "https://github.com/Ten-Kuro/foundryvtt-switch-theme-dnd/archive/refs/heads/develop.zip"
 }
