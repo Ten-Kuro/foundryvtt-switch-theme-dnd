@@ -1,0 +1,4 @@
+/* Applique un background verte */
+#ui-right, #players, #hotbar, #hotbar-directory-controls, #action-bar, #hotbar-page-controls {
+  background-color: blue;
+}

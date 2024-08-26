@@ -22,18 +22,16 @@
 		{
 			"lang": "en",
 			"name": "English",
-			"path" : "languages/en.json"
+			"path" : "lang/en.json"
 		},
 		{
 			"lang": "fr",
 			"name": "Français",
-			"path": "languages/fr.json"
+			"path": "lang/fr.json"
 		}
 	],
 	"styles": [
-		"styles/default.css",
-		"styles/dbztheme.css",
-		"styles/green.css"
+		"styles/default.css"
 	],
 
   "bugs": "//github.com/Ten-Kuro/foundryvtt-switch-theme-dnd/issues",

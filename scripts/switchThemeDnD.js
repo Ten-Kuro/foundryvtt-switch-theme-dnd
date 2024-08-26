@@ -1,6 +1,6 @@
 /**
  * A single ToDo in our list of Todos.
- * @typedef {Object} SwithTheme
+ * @typedef {Object} ToDo
  * @property {string} id - A unique ID to identify this todo.
  * @property {string} label - The text of the todo.
  * @property {boolean} isDone - Marks whether the todo is done.
@@ -10,7 +10,8 @@
 const IndicatorMode = {
     DBZ: 0,
     GREEN: 1,
-    DEFAULT: 2,
+    BLUE: 2,
+    DEFAULT: 3,
 };
 
 const themes = {
@@ -20,10 +21,36 @@ const themes = {
     [IndicatorMode.GREEN] : {
         css: "styles/green.css"
     },
+    [IndicatorMode.BLUE] : {
+        css: "styles/blue.css"
+    },   
     [IndicatorMode.DEFAULT] : {
         css: "styles/default.css"
     },
 }
+
+const applyTheme = (state) => {
+    const head = document.head;
+
+    // Get the correct theme based on state
+    const theme = themes[state] || themes[IndicatorMode.DEFAULT];
+    const hrefToApply = theme.css;
+
+    // Iterate through head children and replace only the theme CSS value part in href
+    Array.from(head.children).some(child => {
+        if (child.href) {
+            // Iterate over each theme's CSS value
+            for (const cssPath of Object.values(themes).map(t => t.css)) {
+                if (child.href.includes(cssPath)) {
+                    // Replace only the matched theme CSS part
+                    child.href = child.href.replace(cssPath, hrefToApply);
+                    return true; // Stop the loop after replacement
+                }
+            }
+        }
+        return false; // Continue loop if no replacement was made
+    });
+};
 
 class SwitchTheme {
     static ID = 'switchThemeDnD';
@@ -65,37 +92,24 @@ class SwitchTheme {
             hint: `SWITCH-THEME.settings.${this.SETTINGS.SELECT_SKIN}.Hint`,
             scope: "client",
             config: true,
-            default: 2,
+            default: 3,
             type: Number,
 			choices: {
 				0: `SWITCH-THEME.settings.${this.SETTINGS.OPTIONS}.indicator.choices.0`,
 				1: `SWITCH-THEME.settings.${this.SETTINGS.OPTIONS}.indicator.choices.1`,
-                2: `SWITCH-THEME.settings.${this.SETTINGS.OPTIONS}.indicator.choices.2`
+                2: `SWITCH-THEME.settings.${this.SETTINGS.OPTIONS}.indicator.choices.2`,
+                3: `SWITCH-THEME.settings.${this.SETTINGS.OPTIONS}.indicator.choices.3`
 			},
 			onChange: (value) => {
-				const state = Number(value);
-				const head = document.head;
-
-				const theme = themes[state] || themes[IndicatorMode.DEFAULT];
-				const hrefToApply = theme.css;
-				
-				// Iterate through head children and replace only the theme CSS value part in href
-                Array.from(head.children).some(child => {
-                    if (child.href) {
-                        // Iterate over each theme's CSS value
-                        for (const cssPath of Object.values(themes).map(t => t.css)) {
-                            if (child.href.endsWith(cssPath)) {
-                                // Replace only the matched theme CSS part
-                                child.href = child.href.replace(cssPath, hrefToApply);
-                                return true; // Stop the loop after replacement
-                            }
-                        }
-                    }
-                    return false; // Continue loop if no replacement was made
-                });
-			}
+               applyTheme(Number(value));
+            }
         });
+        
+        let state = Number(game.settings.get(this.ID, this.SETTINGS.SELECT_SKIN));
+        applyTheme(Number(state));
     }
+    
+    
 }
 
 // Register our module's debug flag with developer mode's custom hook

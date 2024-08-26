@@ -1,10 +1,6 @@
 {
 	"SWITCH-THEME": {
 	    "settings": {
-		    "activate-themes": {
-			    "Name": "Activer le thème DBZ ?",
-			    "Hint": "Permet d'activer ou non le thème DBZ."
-		    },
 			"select-skin": {
 				"Name": "Sélectionner le thème :",
 				"Hint": "Basculer entre les thèmes spécifiques et celui par Defaut en jeu."
@@ -12,7 +8,8 @@
 			"options" : {
 				"indicator.choices.0": "DBZ",
 				"indicator.choices.1": "Vert",
-				"indicator.choices.2": "Défaut"
+				"indicator.choices.2": "Bleu",
+				"indicator.choices.3": "Défaut"
 			}
 	  	}
 	}
