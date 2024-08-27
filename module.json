@@ -33,6 +33,9 @@
 	"styles": [
 		"styles/default.css"
 	],
+	"templates": [
+		"templates/actor-character-sheet.hbs"
+	],
 
   "bugs": "//github.com/Ten-Kuro/foundryvtt-switch-theme-dnd/issues",
   "url": "https://github.com/Ten-Kuro/foundryvtt-switch-theme-dnd",
